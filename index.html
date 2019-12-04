@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MyBp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body onload="init()">
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>My BP Log</h1>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal">
+    Add New
+  </button><span class="instructions"> or an click entry to remove</span>
+  
+  <!-- Modal -->
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">please log results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <span>high:</span> <input class="high-entry" type="number" name="high" id="high">
+         <span>low:</span> <input class="low-entry" type="number" name="low" id="high">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="onAddNew()"  data-toggle="modal" data-target="#exampleModal">Add New Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p class="data-container"><table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody class="data-display">
+      
+     
+    </tbody>
+  </table>
+  </p>
+</div>
+<script src="./js/script.js"></script>
+<script src="./js/bpService.js"></script>
+<script src="./js/bpController.js"></script>
+<script src="./js/storage-service.js"></script>
+<script src="./js/utils.js"></script>
+</body>
+</html
